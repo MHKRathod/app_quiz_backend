@@ -10,6 +10,7 @@ const PORT = 3000;
 // })
 
 app.get('/',(req,res) => {
+    console.log(quizzes);
     res.send("quizzes");
 })
 
