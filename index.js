@@ -8,6 +8,10 @@ app.get('/', (req, res) => {
 
 });
 
+app.get("/quiz",(req,res) => {
+    res.send(quizzes)
+})
+
 app.listen(process.env.PORT || PORT, () => {
     console.log("Server started");
 });
