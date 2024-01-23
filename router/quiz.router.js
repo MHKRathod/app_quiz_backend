@@ -1,5 +1,5 @@
 const express = require("express");
-const quizRouter = express.router();
+const quizRouter = express.Router();
 const quizzes = require('../db/quizzes');
 
 

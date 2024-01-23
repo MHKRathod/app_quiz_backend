@@ -1,7 +1,7 @@
 const express = require("express");
-const quizzes = require("./db/quizzes");
+
 const quizRouter = require('./router/quiz.router')
-const cors = requires('cors');
+const cors = require ('cors');
 const app = express();
 
 app.use(cors());
