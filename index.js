@@ -1,6 +1,8 @@
 const express = require("express");
 const quizzes = require('./db/quizzes')
+const cors = requires('cors');
 const app = express();
+app.use(cors());
 const PORT = 3000;
 
 
