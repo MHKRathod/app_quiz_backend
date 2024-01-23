@@ -1,4 +1,5 @@
 const express = require("express");
+const quizzes = require('./db/quizzes')
 const app = express();
 const PORT = 3000;
 
