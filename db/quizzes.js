@@ -5,7 +5,7 @@ const quizzes = {
         // 1st Quiz Card --> will have title, category, description, quiz,
         {
             id: uuid(),
-            category: "marvel",
+            category: "DDDDCCCC",
             // image: "https://parade.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_700/MTkwNTgwOTkzMTk0MDc1MjYx/marvel-quiz-copy.webp",
             title: "Marvel",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tristique quis nunc eget rutrum",
