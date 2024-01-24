@@ -6,6 +6,7 @@ const cors = require ('cors');
 const app = express();
 
 app.use(cors());
+app.use(express.json());
 
 const PORT = 3000;
 
@@ -17,8 +18,10 @@ app.get('/', (req, res) => {
 
 app.use('/quiz',quizRouter);
 
-app.post("/auth/login",(req,res) => {
+app.post('/login',(req,res) => {
+  try{
     const {username,password} = req.body;
+    console.log(req.body)
     const isUserNameVerified = userdata.users.some(user => user.username === username && user.password === password)
     if(isUserNameVerified){
         res.json("userverified")
@@ -26,6 +29,10 @@ app.post("/auth/login",(req,res) => {
     else{
         res.status(401).json({message:"invalidcredentials"})
     }
+  }
+  catch(error){
+    res.send(error)
+  }
 })
 
 app.listen(process.env.PORT || PORT, () => {
