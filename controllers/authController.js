@@ -12,7 +12,7 @@ const signupHandler = (req,res)=> {
     else{
         const id = uuid();
         const newUser = {id,username,password}
-        userdata.users={...userdata.users,newUser}
+        userdata.users=[...userdata.users,newUser]
         const token =jwt.sign({id:username},process.env.SECRET_TOKEN);
         res.json({message:`success - created new user --> ${username}::${token}`})
     }
