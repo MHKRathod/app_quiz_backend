@@ -1,7 +1,7 @@
 const express = require("express");
 
 const quizRouter = require('./router/quiz.router');
-const loginRouter = require("./router/auth.router");
+const {loginRouter,signupRouter} = require("./router/auth.router");
 
 const cors = require ('cors');
 const app = express();
@@ -20,6 +20,7 @@ app.get('/', (req, res) => {
 app.use('/quiz',quizRouter);
 
 app.use('/auth/login',loginRouter)
+app.use('/auth/signup',signupRouter)
 
 app.listen(process.env.PORT || PORT, () => {
     console.log("Server started");

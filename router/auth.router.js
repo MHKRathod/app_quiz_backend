@@ -11,4 +11,4 @@ const signupRouter = express.Router();
        signupRouter.route("/")
         .post(signupHandler)
 
-module.exports={loginRouter,signUpRouter};;
+module.exports={loginRouter,signupRouter};;
