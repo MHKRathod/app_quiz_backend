@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 
 app.use('/quiz',quizRouter);
 
-app.post('/login',(req,res) => {
+app.post('/auth/login',(req,res) => {
   try{
     const {username,password} = req.body;
     console.log(req.body)
