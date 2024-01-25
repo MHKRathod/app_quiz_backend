@@ -1,5 +1,5 @@
 const express = require("express");
-
+const jwt = require("jsonwebtoken");
 const quizRouter = require('./router/quiz.router');
 const userdata = require("./db/users");
 const cors = require ('cors');
@@ -24,7 +24,8 @@ app.post('/auth/login',(req,res) => {
     console.log(req.body)
     const isUserNameVerified = userdata.users.some(user => user.username === username && user.password === password)
     if(isUserNameVerified){
-        res.json("userverified")
+      const token = jwt.sign({id:username},process.env.SECRET_TOKEN)
+        res.json({username,token,message:"userverified"})
     } 
     else{
         res.status(401).json({message:"invalidcredentials"})
