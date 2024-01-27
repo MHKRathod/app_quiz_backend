@@ -1,5 +1,5 @@
 const express = require("express");
-
+const categoriesRouter = require("./router/categories.router"); 
 const quizRouter = require('./router/quiz.router');
 
 const {loginRouter,signupRouter} = require("./router/auth.router");
@@ -18,12 +18,18 @@ app.get('/', (req, res) => {
 
 });
 
+app.use('/categories',categoriesRouter);
 app.use('/quiz',quizRouter);
 
 app.use('/auth/login',loginRouter)
 app.use('/auth/signup',signupRouter)
 app.use(routeNotFound);
 
-app.listen(process.env.PORT || PORT, () => {
-    console.log("Server started");
+// app.listen(process.env.PORT || PORT, () => {
+//     console.log("Server started");
+// });
+
+const port = process.env.PORT || 3001; // Use the specified port or default to 3000
+app.listen(port, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
