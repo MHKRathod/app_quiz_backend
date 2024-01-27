@@ -3,6 +3,19 @@ const jwt = require("jsonwebtoken");
 const userdata = require("../db/users");
 const {v4:uuid} = require("uuid");
 
+
+const authVerify = (req,res,next) => {
+    const token = req.headers.authorisation;
+    try{
+        const decodedToken = jwt.verify(token,process.env.SECRET_TOKEN)
+        req.user = {userId : decodedToken.id}
+        return next();
+        }
+        catch(err) {
+            console.error(`error form server ${JSON.stringify(err)}`)
+        }
+    }
+
 const signupHandler = (req,res)=> {
     const{username,password} = req.body;
     const isUserPresent = userdata.users.some(user => user.username === username)
@@ -30,4 +43,4 @@ const loginHandler = (req,res) => {
     }
 }
 
-module.exports={loginHandler,signupHandler};;
+module.exports={loginHandler,signupHandler,authVerify};;

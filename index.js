@@ -1,7 +1,7 @@
 const express = require("express");
 
 const quizRouter = require('./router/quiz.router');
-const {loginRouter,signupRouter} = require("./router/auth.router");
+const {loginRouter,signupRouter,authVerify } = require("./router/auth.router");
 
 const cors = require ('cors');
 const app = express();
