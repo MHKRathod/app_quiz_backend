@@ -3,6 +3,7 @@ const categoriesRouter = require("./router/categories.router");
 const quizRouter = require('./router/quiz.router');
 
 const {loginRouter,signupRouter} = require("./router/auth.router");
+const authverify = require("./middleware/authverify");
 const routeNotFound = require("./middleware/routeNotFound")
 const cors = require ('cors');
 const app = express();
@@ -12,6 +13,10 @@ app.use(express.json());
 
 const PORT = 3000;
 
+app.use((req, res, next) => {
+    console.log('Request Headers:', req.headers);
+    next();
+  });
 
 app.get('/', (req, res) => {
     res.send("hello geeks");
