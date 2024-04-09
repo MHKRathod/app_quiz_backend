@@ -7,8 +7,8 @@ const quizzes = {
             id: uuid(),
             category: "marvel",
             image: "https://images.immediate.co.uk/production/volatile/sites/3/2018/04/https-2F2Fblogs-images.forbes.com2Fscottmendelson2Ffiles2F20182F042Fimage001-cebe539.jpg?quality=90&crop=75px,0px,811px,540px&resize=960,640",
-            title: "Marvel",
-            description: "hari ipsum dolor sit amet, consectetur adipiscing elit. Aenean tristique quis nunc eget rutrum",
+            title:"Marvel",
+            description:"Test your Marvel knowledge with this exciting quiz! Dive into the Marvel universe and challenge yourself with questions about your favorite superheroes, villains, and iconic moments.",
             quiz: [
                 //1st question and options
                 {
@@ -61,8 +61,8 @@ const quizzes = {
             id: uuid(),
             category: "dc",
             image: "https://media.proprofs.com/images/QM/user_images/2503852/New%20Project%20(56)(110).jpg",
-            title: "DC",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tristique quis nunc eget rutrum",
+            title:"DC",
+            description:"Challenge yourself with our DC Comics quiz! Explore the depths of the multiverse, encounter legendary heroes and dastardly villains, and prove your expertise in all things DC.",
             quiz: [
                 {
                     id: uuid(),
