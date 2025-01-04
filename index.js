@@ -1,4 +1,7 @@
+require('dotenv').config();
+console.log("loaded Secret_Token:", process.env.SECRET_TOKEN);
 const express = require("express");
+
 const categoriesRouter = require("./router/categories.router"); 
 const quizRouter = require('./router/quiz.router');
 
@@ -11,7 +14,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 3000;
+const PORT = 3300;
 
 app.use((req, res, next) => {
     console.log('Request Headers:', req.headers);

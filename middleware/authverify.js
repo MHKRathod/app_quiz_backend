@@ -8,9 +8,8 @@ const authVerify = (req, res, next) => {
         req.user = { userId:  decodedToken.id }
         return next();
     }catch(err){
-        console.error(`error from server ${JSON.stringify(err)}`)
+        console.error(`error from server ${JSON.stringify(err)}`);
+        return res.status(401).json({ message: "Invalid or expired token." });
     }
-
 }
-
 module.exports = authVerify;
