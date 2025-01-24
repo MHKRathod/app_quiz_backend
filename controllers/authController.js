@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const userdata = require("../db/users");
 const {v4:uuid} = require("uuid");
 
-
+ 
 const signupHandler = (req,res)=> {
     const{username,password} = req.body;
     const isUserPresent = userdata.users.some(user => user.username === username)
